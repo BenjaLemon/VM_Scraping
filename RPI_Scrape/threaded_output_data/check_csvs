@@ -1,0 +1,14 @@
+import os
+
+def find_csv_names(path):
+    files = os.listdir(path)
+    return([file for file in files if file.endswith(".csv")])
+
+
+count = 0
+for i in range(0,24):
+	dir = './thread_' + str(i)
+	csvs = find_csv_names(dir)
+	count += len(csvs)
+
+print(count)
